@@ -5,6 +5,7 @@
 **Galaxy Fighter** is a 2D space shooter game made with **Python, Pygame, Vosk, and Sounddevice**.  
 The game lets you control your spaceship with **your voice** — move left, move right, shoot, activate power-ups — alongside traditional keyboard controls.
 
+download link -> https://drive.google.com/file/d/1mobAIixeH6N7pKpXY3MvVsQ6eYE7vVNc/view?usp=drive_link
 ---
 
 ## 🚀 Features
