@@ -1,129 +1,124 @@
+# 🌌 Voice Controlled Space Shooter Game
 
-
-# 🌍 Voice Controlled space shooter
-
-**Galaxy Fighter** is a 2D space shooter game made with **Python, Pygame, Vosk, and Sounddevice**.  
-The game lets you control your spaceship with **your voice** — move left, move right, shoot, activate power-ups — alongside traditional keyboard controls.
+A classic 2D space shooter game built with **Python**, **Pygame**, and **Vosk**, where you can control your spaceship entirely using your voice! Navigate through challenging waves, collect power-ups, and defeat powerful bosses—all by speaking commands.
 
 download link -> https://drive.google.com/file/d/1mobAIixeH6N7pKpXY3MvVsQ6eYE7vVNc/view?usp=drive_link
 ---
 
-## 🚀 Features
+## ✨ Features
 
-- **Classic 2D space shooter gameplay**
-- **Voice control:** Say "left," "right," "up," "down," "fire," "start," "level one," etc.
-- **Power-ups:** health, shield, rapid-fire
-- **Boss fights:** Levels 2-4 feature a powerful boss at the last wave
-- **Levels and waves:** The game progressively gets more challenging with each wave
-- **Customizable:** Easily add more enemies, power-ups, or voice commands
-
----
-
-## 🔹 Tech Stack
-
-- **Python 3.7+**
-- **Pygame:** rendering, game loop, collision, audio
-- **Vosk:** speech-to-text for voice control
-- **Sounddevice:** accessing raw audio from your microphone
-- **JSON:** parsing voice recognizer output
+*   **🎙️ Voice Control Gameplay:** Use spoken commands to move, shoot, navigate menus, and select levels.
+*   **🛸 Exciting 2D Space Combat:** Battle through multiple waves of enemies with progressively increasing difficulty.
+*   **💥 Boss Fights:** Face off against unique and challenging boss ships at the end of higher levels (Levels 2-4).
+*   **⚡ Power-ups:** Enhance your ship with health boosts, protective shields, and rapid-fire capabilities.
+*   **🖱️ Traditional Controls Supported:** Prefer the classic way? Keyboard and mouse controls are fully supported.
+*   **🧵 Threaded Audio Processing:** Voice recognition runs in the background for lag-free gaming performance.
 
 ---
 
-## ⚙ Installation
+## 🛠️ Technology Stack
 
-1️⃣ **Clone this repository:**
+*   **[Python 3.7+](https://www.python.org/):** Core programming language.
+*   **[Pygame](https://www.pygame.org/):** For rendering graphics, game loop management, collision detection, and audio playback.
+*   **[Vosk](https://alphacephei.com/vosk/):** Lightweight and offline speech-to-text engine for voice control.
+*   **[Sounddevice](https://python-sounddevice.readthedocs.io/):** For capturing raw audio from the microphone.
 
-```bash
-git clone https://github.com/siddhantsaxena45/galactic-fighter.git
-cd galactic-fighter
-````
+---
 
-2️⃣ **Create a virtual environment (optional but recommended):**
+## 🎮 How to Play
 
-```bash
-python -m venv venv
-source venv/Scripts/activate  # On Windows
-source venv/bin/activate      # On Linux/Mac
+### Voice Commands
+
+Ensure your microphone is connected and try the following voice commands to control the game:
+
+*   **Menu Navigation:**
+    *   `"start"`: Start the game from the main menu.
+    *   `"quit"`: Exit the game.
+    *   `"level one"`, `"level two"`, `"level three"`, `"level four"`: Select a specific level.
+*   **Movement:**
+    *   `"left"`: Move ship left.
+    *   `"right"`: Move ship right.
+    *   `"up"`: Move ship up.
+    *   `"down"`: Move ship down.
+    *   `"stop"`: Stop movement.
+*   **Combat:**
+    *   `"fire"`: Start shooting lasers.
+    *   `"cease fire"` or `"stop fire"`: Stop shooting.
+
+### Keyboard Controls (Fallback)
+
+*   **Movement:** Arrow keys (`Up`, `Down`, `Left`, `Right`)
+*   **Shoot:** `Spacebar`
+*   **Menu:** Mouse clicks
+
+---
+
+## 🚀 Installation & Setup
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/yourusername/voice-controlled-space-shooter.git
+    cd voice-controlled-space-shooter/code
+    ```
+
+2.  **Create a virtual environment (Recommended):**
+    ```bash
+    python -m venv venv
+    # On Windows:
+    venv\Scripts\activate
+    # On Linux/Mac:
+    source venv/bin/activate
+    ```
+
+3.  **Install dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4.  **Download the Vosk Voice Model:**
+    *   Download the **English Small** model from the [Vosk Models page](https://alphacephei.com/vosk/models).
+    *   Extract the downloaded folder into the `models/` directory. Ensure the extracted folder is named exactly `vosk-model-small-en-us-0.15`.
+
+5.  **Run the game:**
+    ```bash
+    python main.py
+    ```
+
+---
+
+## 📂 Project Structure
+
+```text
+code/
+├── main.py               # Core game loop, rendering, and logic
+├── voice_control.py      # Audio capturing and Vosk model processing
+├── requirements.txt      # Python package dependencies
+├── assets/               # Images and sprites (ships, lasers, power-ups, bosses)
+├── sounds/               # Sound effects (lasers, explosions, game over)
+└── models/               # Vosk speech recognition models directory
 ```
 
-3️⃣ **Install required packages:**
+---
 
-```bash
-pip install -r requirements.txt
-```
+## 💡 Troubleshooting
 
-4️⃣ **Download Vosk Model (English Small or Large) from [Vosk models](https://alphacephei.com/vosk/models)**
-Extract it into `models/vosk-model-small-en-us-0.15/`.
+*   **Voice controls are unresponsive or laggy:**
+    *   Ensure you are in a quiet environment.
+    *   Consider using a headset microphone to reduce background noise interference.
+*   **Model Not Found Error:**
+    *   Double-check that the Vosk model is downloaded, extracted, and placed exactly at `models/vosk-model-small-en-us-0.15/`.
+*   **Audio Device Issues:**
+    *   Check your default microphone settings in your OS to ensure Python has permission to access it.
 
 ---
 
-## 🕹 How to Play
-
-* **Start game:** Say "start" or press the `Enter` key.
-* **Move:** Say "left," "right," "up," or "down," or use arrow keys.
-* **Shoot:** Say "fire," or press `Space`.
-* **Levels:** Say "level one," "level two," etc., or select from menu.
-* **Power-up:** health, shield, rapid (automatically collected)
-
----
-
-## 📝 File Structure
-
-```
-galactic-fighter/
-│
-├── final.py
-├── voice_control.py
-├── sounds/
-│ └─ explosion.wav
-├── models/
-│ └─ vosk-model-small-en-us-0.15/
-├── assets/
-│ ├─ background.jpg
-│ ├─ ship.png
-│ └─ power-up.png
-├── requirements.txt
-├── README.md
-```
-
----
-
-## 🛠 Customize
-
-* To **adjust difficulty**, change `wave_length` or `enemy_vel`.
-* To **add more power-ups or enemies**, simply create additional subclasses in `game_classes`.
-
----
-
-## 🔹 Notes
-
-✅ The game uses **Vosk's small English model for faster, lightweight voice recognition**.
-✅ The recognizer runs in a separate thread to avoid blocking the main game loop.
-
----
-
-## 🐛 Troubleshooting
-
-➥ If you find your voice controls laggy or unreliable:
-
-* Try a quieter room.
-* Use a headset.
-* Reduce background noise.
-
-➥ If you get an `ImportError` or `ModuleNotFoundError`:
-
-* Make sure you installed all requirements and downloaded the Vosk model.
-
----
 ![Screenshot 1](screenshots/s%20(1).png)
 ![Screenshot 2](screenshots/s%20(2).png)
 ![Screenshot 3](screenshots/s%20(3).png)
 ![Screenshot 4](screenshots/s%20(4).png)
-## 🙏 Credits
 
-* **OpenAI GPT-4:** Assistance with coding
-* **Vosk:** Speech recognition
-* **Pygame:** Gaming framework
+## 📜 Credits
 
----
-
+*   **Programming & Design:** [Siddhant Saxena]
+*   **Speech Recognition Engine:** [Vosk](https://alphacephei.com/vosk/)
+*   **Game Framework:** [Pygame](https://www.pygame.org/)
